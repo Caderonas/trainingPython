@@ -1,4 +1,8 @@
 def countWord(sentence):
+    """ Print each word
+        follow by the number
+        of occurences.
+    """
     words = sentence.split()
     if (len(words) == 0):
         return
@@ -7,8 +11,5 @@ def countWord(sentence):
         sentence = sentence.replace(words[0], "", 1);
         count += 1
     countStr = str(count)
-    print(words[0]+' '+ countStr)
+    print(words[0]+': '+ countStr)
     countWord(sentence)
-
-sentence = "olly olly in come free"
-countWord(sentence)
