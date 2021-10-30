@@ -6,6 +6,7 @@ import pangram
 import rnaTranscription
 import wordCount
 import rle
+import differenceOfSquare
 
 def test_helloWorld():
     test = "Hello World !"
@@ -14,7 +15,7 @@ def test_helloWorld():
     helloWorld.helloWorld()
     sys.stdout = sys.__stdout__
     if test+"\n"== capturedOutput.getvalue():
-        print ('HelloWorld succed !')
+        print ('HelloWorld succeeded !')
     else:
         print ('HelloWorld failed !')
 
@@ -30,7 +31,7 @@ def test_pangram():
         if outputs[idx]+"\n" != capturedOutput.getvalue():
             print ('Pangram failed !')
             return
-    print ('Pangram succed !')
+    print ('Pangram succeeded !')
 
 def test_rnaTranscription():
     tests = ["GCTAA", "AATCG", ""]
@@ -43,7 +44,7 @@ def test_rnaTranscription():
         if outputs[idx]+"\n" != capturedOutput.getvalue():
             print ('rnaTranscription failed !')
             return
-    print ( 'rnaTranscription succed !')
+    print ( 'rnaTranscription succeeded !')
 
 def test_wordCount():
     tests = ["olly olly in come free", ""]
@@ -57,7 +58,7 @@ def test_wordCount():
             print (capturedOutput.getvalue())
             print ('countWord failed !')
             return
-    print ("wordCount succed !")
+    print ("wordCount succeeded !")
 
 def test_rle():
     tests = ["WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB", "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWW", ""]
@@ -71,11 +72,21 @@ def test_rle():
             print (capturedOutput.getvalue())
             print ('rle failed !')
             return
-    print ("rle succed !")
+    print ("rle succeeded !")
 
+def test_differenceOfSquare():
+    tests = [10]
+    outputs = [2640]
+    for idx, test in enumerate(tests):
+        if outputs[idx] != differenceOfSquare.differenceOfSquares(test):
+            print (differenceOfSquare.differenceOfSquares(test))
+            print ("differenceOfSquare failed !")
+            return
+    print ("differenceOfSquare succeeded !")
 
 test_helloWorld()
 test_pangram()
 test_rnaTranscription()
 test_wordCount()
 test_rle()
+test_differenceOfSquare()
