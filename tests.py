@@ -1,12 +1,12 @@
 import io
 import sys
 
-import helloWorld
-import pangram
-import rnaTranscription
-import wordCount
-import rle
-import differenceOfSquare
+import helloWorld as helloWorld
+import pangram as pangram
+import rnaTranscription as rnaTranscription
+import wordCount as wordCount
+import rle as rle
+import differenceOfSquare as differenceOfSquare
 
 def test_helloWorld():
     test = "Hello World !"
