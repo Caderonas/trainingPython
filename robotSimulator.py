@@ -2,7 +2,7 @@ class Robot :
 	""" Direction is use by his index in list : """
 	direction = ["north", "east", "south", "west"]
 
-	""" Getter and Setter for X, Y and direction (index)"""
+	""" Getter and Setter for X, Y and direction(index)"""
 	def __init__(self, x = 0, y = 0, direction = "north"):
 		self._x = x
 		self._y = y
@@ -33,12 +33,12 @@ class Robot :
 			self._direction -= 1
 	def advance(self):
 		if self._direction == 0:
-			self._y -= 1
-		if self._direction == 2:
 			self._y += 1
-		if self._direction == 3:
-			self._x += 1
+		if self._direction == 2:
+			self._y -= 1
 		if self._direction == 1:
+			self._x += 1
+		if self._direction == 3:
 			self._x -= 1
 
 	""" Main simulation """
@@ -50,9 +50,6 @@ class Robot :
 				self.turn_left()
 			if i == 'A':
 				self.advance()
-			print ("Direction, x and y : "+i)
-			print (self._direction)
-			print ([self._x, self._y])
 		return [self._x, self._y]
 
 """ Tests zone """
@@ -60,9 +57,4 @@ robot = Robot()
 robot.set_x(7)
 robot.set_y(3)
 robot.set_direction("north")
-robot.robotSimulator("RAALAL")
-print (robot.get_x())
-print (robot.get_y())
-
-
-
+print (robot.robotSimulator("RAALAL"))
