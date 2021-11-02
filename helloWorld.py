@@ -1,2 +1,6 @@
 def helloWorld():
-    print("Hello World !")
+    name = input('Your name ?')
+    if name == "":
+        print("Hello World !")
+    else:
+        print("Salut "+name+" !")
