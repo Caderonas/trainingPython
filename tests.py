@@ -1,23 +1,11 @@
 import io
 import sys
 
-import helloWorld as helloWorld
 import pangram as pangram
 import rnaTranscription as rnaTranscription
 import wordCount as wordCount
 import rle as rle
 import differenceOfSquare as differenceOfSquare
-
-def test_helloWorld():
-    test = "Hello World !"
-    capturedOutput = io.StringIO()
-    sys.stdout = capturedOutput
-    helloWorld.helloWorld()
-    sys.stdout = sys.__stdout__
-    if test+"\n"== capturedOutput.getvalue():
-        print ('HelloWorld succeeded !')
-    else:
-        print ('HelloWorld failed !')
 
 def test_pangram():
     tests = ["The quick brown fox jumps over the lazy dog.", "The quck brown fox jumps over the lazy dog.", ""]
@@ -29,9 +17,9 @@ def test_pangram():
         print (pangram.pangram(test))
         sys.stdout = sys.__stdout__
         if outputs[idx]+"\n" != capturedOutput.getvalue():
-            print ('Pangram failed !')
+            print ('2 . Pangram failed !')
             return
-    print ('Pangram succeeded !')
+    print ('2 . Pangram succeeded !')
 
 def test_rnaTranscription():
     tests = ["GCTAA", "AATCG", ""]
@@ -42,9 +30,9 @@ def test_rnaTranscription():
         rnaTranscription.rnaTranscription(test)
         sys.stdout = sys.__stdout__
         if outputs[idx]+"\n" != capturedOutput.getvalue():
-            print ('rnaTranscription failed !')
+            print ('3 . rnaTranscription failed !')
             return
-    print ( 'rnaTranscription succeeded !')
+    print ( '3 . rnaTranscription succeeded !')
 
 def test_wordCount():
     tests = ["olly olly in come free", ""]
@@ -56,9 +44,9 @@ def test_wordCount():
         sys.stdout = sys.__stdout__
         if outputs[idx] != capturedOutput.getvalue():
             print (capturedOutput.getvalue())
-            print ('countWord failed !')
+            print ('4 . countWord failed !')
             return
-    print ("wordCount succeeded !")
+    print ("4 . wordCount succeeded !")
 
 def test_rle():
     tests = ["WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB", "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWW", ""]
@@ -70,9 +58,9 @@ def test_rle():
         sys.stdout = sys.__stdout__
         if outputs[idx]+'\n' != capturedOutput.getvalue():
             print (capturedOutput.getvalue())
-            print ('rle failed !')
+            print ('6 . rle failed !')
             return
-    print ("rle succeeded !")
+    print ("6 . rle succeeded !")
 
 def test_differenceOfSquare():
     tests = [10]
@@ -80,11 +68,10 @@ def test_differenceOfSquare():
     for idx, test in enumerate(tests):
         if outputs[idx] != differenceOfSquare.differenceOfSquares(test):
             print (differenceOfSquare.differenceOfSquares(test))
-            print ("differenceOfSquare failed !")
+            print ("7 . differenceOfSquare failed !")
             return
-    print ("differenceOfSquare succeeded !")
+    print ("7 . differenceOfSquare succeeded !")
 
-test_helloWorld()
 test_pangram()
 test_rnaTranscription()
 test_wordCount()

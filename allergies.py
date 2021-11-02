@@ -7,5 +7,3 @@ def allergies (allergie):
 		allergie -= 2**i if 2**i <= allergie else 0
 	print (outputs)
 	return outputs
-
-allergies(34)

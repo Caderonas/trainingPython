@@ -12,7 +12,7 @@ def rle(string):
         count += 1
         string = string.replace(curLetter, "", 1)
         if len(string) == 0:
-            break           
+            break
     number = str(count-1)
     if count == 1:
         print(curLetter, end="")
@@ -22,3 +22,5 @@ def rle(string):
         rle(string)
     else:
         print(string)
+
+rle("WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB")
