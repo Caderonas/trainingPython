@@ -4,5 +4,4 @@ def rnaTranscription(dna):
     rna = ''
     for char in dna:
         rna += mapping[char]
-    print (rna)
     return rna

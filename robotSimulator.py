@@ -18,17 +18,19 @@ class Robot :
 	def set_y(self, y):
 		self._y = y
 	def set_direction(self, current):
+		if self.direction.count(current) == 0:
+			raise ValueError("Incorrect direction")
 		self._direction = self.direction.index(current)
 
 	""" Functions of simulation """
 	def turn_right(self):
-		if self._direction == 4:
+		if self._direction == 3:
 			self._direction = 0
 		else:
 			self._direction += 1
 	def turn_left(self):
 		if self._direction == 0:
-			self._direction = 4
+			self._direction = 3
 		else:
 			self._direction -= 1
 	def advance(self):
@@ -58,3 +60,4 @@ robot.set_x(7)
 robot.set_y(3)
 robot.set_direction("north")
 print (robot.robotSimulator("RAALAL"))
+print(str(robot.get_direction()))

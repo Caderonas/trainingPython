@@ -2,6 +2,8 @@ def rle(string):
     """ Convert each multiple
         char in a row by the number of
         occurence follow by the char.
+        Recursively
+        Output : print
     """
     if len(string) == 0:
         print ("")
@@ -13,11 +15,10 @@ def rle(string):
         string = string.replace(curLetter, "", 1)
         if len(string) == 0:
             break
-    number = str(count-1)
     if count == 1:
         print(curLetter, end="")
     else:
-        print (number + curLetter, end="")
+        print (str(count) + curLetter, end="")
     if len(string) > 1:
         rle(string)
     else:

@@ -3,5 +3,4 @@ def anagram(base, listWords):
     for word in listWords:
         if sorted(base) == sorted(word):
             output.append(word)
-    print (output)
     return output

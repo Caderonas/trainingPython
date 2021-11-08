@@ -5,5 +5,4 @@ def allergies (allergie):
 		if allergie >= 2**i:
 			outputs.append(allergies[i])
 		allergie -= 2**i if 2**i <= allergie else 0
-	print (outputs)
 	return outputs
